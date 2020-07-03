@@ -1,0 +1,9 @@
+C:\Users\Dom\source\repos\DemoApp\Data_Connection\bin\Debug\netstandard2.0\Data_Connection.deps.json
+C:\Users\Dom\source\repos\DemoApp\Data_Connection\bin\Debug\netstandard2.0\Data_Connection.dll
+C:\Users\Dom\source\repos\DemoApp\Data_Connection\bin\Debug\netstandard2.0\Data_Connection.pdb
+C:\Users\Dom\source\repos\DemoApp\Data_Connection\obj\Debug\netstandard2.0\Data_Connection.AssemblyInfoInputs.cache
+C:\Users\Dom\source\repos\DemoApp\Data_Connection\obj\Debug\netstandard2.0\Data_Connection.AssemblyInfo.cs
+C:\Users\Dom\source\repos\DemoApp\Data_Connection\obj\Debug\netstandard2.0\Data_Connection.csproj.CoreCompileInputs.cache
+C:\Users\Dom\source\repos\DemoApp\Data_Connection\obj\Debug\netstandard2.0\Data_Connection.dll
+C:\Users\Dom\source\repos\DemoApp\Data_Connection\obj\Debug\netstandard2.0\Data_Connection.pdb
+C:\Users\Dom\source\repos\DemoApp\Data_Connection\obj\Debug\netstandard2.0\Data_Connection.csprojAssemblyReference.cache

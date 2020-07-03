@@ -1,0 +1,91 @@
+﻿@page "/Task"
+
+<h3>Task</h3>
+@using Data_Connection
+@using Data_Connection.Models
+@using Demo.Models;
+
+@inject ITask_sql _db
+
+<h2>Add new Task to your list </h2>
+
+<EditForm Model="@tasknew" OnValidSubmit="newTask">
+    <DataAnnotationsValidator></DataAnnotationsValidator>
+    <ValidationSummary></ValidationSummary>
+    <InputText id="Task" @bind-Value="tasknew.Task"></InputText>
+    <InputDate id="Data_task" @bind-Value="tasknew.Date" ></InputDate>
+     
+    <button type="submit" class="btn btn-primary">Submit</button>
+</EditForm>
+
+@if (taks is null)
+{ 
+<p> <em>Loading ...</em></p>
+}else
+{
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <td>Task</td>
+                <td>Date</td>
+                <td></td>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var task_list in taks)
+            {
+                <tr>
+                    <td>@task_list.Task</td>
+                    <td>@change(@task_list.Data)</td>
+                    <td><button class="btn btn-danger" @onclick="(() => del(task_list.Id))">Delete</button></td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+
+}
+
+@code {
+    private List<Task_Model> taks;
+    Task_ADDModel tasknew = new Task_ADDModel();
+
+
+    protected override async Task OnInitializedAsync()
+    {
+        taks = await _db.GetPeople();
+    }
+
+    private async Task del(int id)
+    {
+        await _db.DeletePeople(id);
+        taks = await _db.GetPeople();
+
+    }
+    private async Task edit(int id)
+    {
+
+    }
+
+    public string change(DateTime a)
+    {
+        string[] b = Convert.ToString(a).Split(" ");
+        string c = b[0];
+        return c;
+    }
+
+    private async Task newTask()
+    {
+        Task_Model a = new Task_Model
+        {
+            Task = tasknew.Task,
+            Data = tasknew.Date,
+            Id_user = '1'
+        };
+
+        await _db.AddPeople(a);
+        taks.Add(a);
+
+    }
+
+}
